@@ -7,6 +7,8 @@ import 'src/widgets/ns_image_widget.dart';
 
 export 'src/models/ns_image.dart';
 
+double _padding = 1.0;
+
 class NSImageCollage extends StatelessWidget {
   const NSImageCollage({Key? key, required this.images}) : super(key: key);
 
@@ -34,13 +36,20 @@ class NSImageCollage extends StatelessWidget {
     if (images.length == 2) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: images.map((image) {
-          return Expanded(
+        children: [
+          Expanded(
             child: NSImageWidget(
-              image: image,
+              image: images.first,
+              bottom: _padding,
             ),
-          );
-        }).toList(),
+          ),
+          Expanded(
+            child: NSImageWidget(
+              image: images.last,
+              top: _padding,
+            ),
+          )
+        ],
       );
     }
     if (images.length == 3) {
@@ -51,6 +60,7 @@ class NSImageCollage extends StatelessWidget {
             flex: 2,
             child: NSImageWidget(
               image: images.first,
+              bottom: _padding,
             ),
           ),
           Expanded(
@@ -60,11 +70,15 @@ class NSImageCollage extends StatelessWidget {
                 Expanded(
                   child: NSImageWidget(
                     image: images[1],
+                    top: _padding,
+                    right: _padding,
                   ),
                 ),
                 Expanded(
                   child: NSImageWidget(
                     image: images.last,
+                    top: _padding,
+                    left: _padding,
                   ),
                 ),
               ],
@@ -80,6 +94,7 @@ class NSImageCollage extends StatelessWidget {
           Expanded(
             child: NSImageWidget(
               image: images.first,
+              bottom: _padding,
             ),
           ),
           Expanded(
@@ -89,11 +104,17 @@ class NSImageCollage extends StatelessWidget {
                 Expanded(
                   child: NSImageWidget(
                     image: images[1],
+                    top: _padding,
+                    right: _padding,
+                    bottom: _padding,
                   ),
                 ),
                 Expanded(
                   child: NSImageWidget(
                     image: images[2],
+                    top: _padding,
+                    left: _padding,
+                    bottom: _padding,
                   ),
                 ),
               ],
@@ -102,6 +123,7 @@ class NSImageCollage extends StatelessWidget {
           Expanded(
             child: NSImageWidget(
               image: images.last,
+              top: _padding,
             ),
           ),
         ],
@@ -114,6 +136,7 @@ class NSImageCollage extends StatelessWidget {
           Expanded(
             child: NSImageWidget(
               image: images.first,
+              bottom: _padding,
             ),
           ),
           Expanded(
@@ -123,16 +146,26 @@ class NSImageCollage extends StatelessWidget {
                 Expanded(
                   child: NSImageWidget(
                     image: images[1],
+                    top: _padding,
+                    bottom: _padding,
+                    right: _padding,
                   ),
                 ),
                 Expanded(
                   child: NSImageWidget(
                     image: images[2],
+                    top: _padding,
+                    bottom: _padding,
+                    left: _padding,
+                    right: _padding,
                   ),
                 ),
                 Expanded(
                   child: NSImageWidget(
                     image: images[3],
+                    top: _padding,
+                    bottom: _padding,
+                    left: _padding,
                   ),
                 ),
               ],
@@ -141,6 +174,7 @@ class NSImageCollage extends StatelessWidget {
           Expanded(
             child: NSImageWidget(
               image: images.last,
+              top: _padding,
             ),
           ),
         ],
@@ -152,6 +186,7 @@ class NSImageCollage extends StatelessWidget {
         Expanded(
           child: NSImageWidget(
             image: images.first,
+            bottom: _padding,
           ),
         ),
         Expanded(
@@ -161,11 +196,17 @@ class NSImageCollage extends StatelessWidget {
               Expanded(
                 child: NSImageWidget(
                   image: images[1],
+                  top: _padding,
+                  bottom: _padding,
+                  right: _padding,
                 ),
               ),
               Expanded(
                 child: NSImageWidget(
                   image: images[2],
+                  top: _padding,
+                  bottom: _padding,
+                  left: _padding,
                 ),
               ),
             ],
@@ -178,11 +219,16 @@ class NSImageCollage extends StatelessWidget {
               Expanded(
                 child: NSImageWidget(
                   image: images[3],
+                  top: _padding,
+                  right: _padding,
                 ),
               ),
               Expanded(
                 child: NSImageWidget(
                   image: images[4],
+                  top: _padding,
+                  left: _padding,
+                  right: _padding,
                 ),
               ),
               Expanded(
@@ -192,6 +238,8 @@ class NSImageCollage extends StatelessWidget {
                   children: [
                     NSImageWidget(
                       image: images.last,
+                      top: _padding,
+                      left: _padding,
                     ),
                     if (moreImages) ...[
                       Container(

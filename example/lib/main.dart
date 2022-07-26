@@ -100,6 +100,33 @@ class _MyHomePageState extends State<MyHomePage> {
           'https://source.unsplash.com/640x1200?nature,water,mountain,sunset,sunrise&random=15',
     ),
   ];
+
+  List<NSImage> sixImages = [
+    NSImage(
+      url:
+          'https://source.unsplash.com/640x1200?nature,water,mountain,sunset,sunrise&random=11',
+    ),
+    NSImage(
+      url:
+          'https://source.unsplash.com/640x1200?nature,water,mountain,sunset,sunrise&random=12',
+    ),
+    NSImage(
+      url:
+          'https://source.unsplash.com/640x1200?nature,water,mountain,sunset,sunrise&random=13',
+    ),
+    NSImage(
+      url:
+          'https://source.unsplash.com/640x1200?nature,water,mountain,sunset,sunrise&random=14',
+    ),
+    NSImage(
+      url:
+          'https://source.unsplash.com/640x1200?nature,water,mountain,sunset,sunrise&random=15',
+    ),
+    NSImage(
+      url:
+          'https://source.unsplash.com/640x1200?nature,water,mountain,sunset,sunrise&random=14',
+    ),
+  ];
   List<NSImage> moreThanFiveImages = [
     NSImage(
       url:
@@ -165,6 +192,9 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           NSImageCollage(
             images: fiveImages,
+          ),
+          NSImageCollage(
+            images: sixImages,
           ),
           NSImageCollage(
             images: moreThanFiveImages,
